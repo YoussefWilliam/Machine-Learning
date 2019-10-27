@@ -234,5 +234,28 @@ accuracy = (int)((acc/200) * 100)
 print("The accuracy of our predicted calculations: \n",accuracy,"%")
 
 #14.        Create a confusion Matrix
+confusionMatrix = np.zeros((10, 10), dtype=int)
+for i in range(len(testlabelsArray)):
+    x = testlabelsArray[i]
+    y = predictionsArray[i]
+    confusionMatrix[x][y] += 1
+
+print("The Confusion Matrix is: \n",confusionMatrix)
+
+figure = plt.figure(figsize=(10,6))
+plt.title("Confusion Matrix")
+plt.imshow(confusionMatrix,cmap=plt.cm.Purples)
+classesNames = ['0', '1','2','3','4','5','6','7','8','9']
+tick_marks = np.arange(len(classesNames))
+plt.xticks(tick_marks, classesNames, rotation=45)
+plt.yticks(tick_marks, classesNames)
+plt.ylabel('Actual Value')
+plt.xlabel('Predicted Value')
+plt.colorbar()
+plt.tight_layout()
+plt.show()
+
+#15.        Save the image
+figure.savefig("Confusion.jpg")
 
 

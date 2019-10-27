@@ -257,5 +257,3 @@ plt.show()
 
 #15.        Save the image
 figure.savefig("Confusion.jpg")
-
-

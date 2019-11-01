@@ -245,7 +245,7 @@ print("The Confusion Matrix is: \n",confusionMatrix)
 figure = plt.figure(figsize=(10,6))
 plt.title("Confusion Matrix")
 plt.imshow(confusionMatrix,cmap=plt.cm.Purples)
-classesNames = ['0', '1','2','3','4','5','6','7','8','9']
+classesNames = ['0','1','2','3','4','5','6','7','8','9']
 tick_marks = np.arange(len(classesNames))
 plt.xticks(tick_marks, classesNames, rotation=45)
 plt.yticks(tick_marks, classesNames)
